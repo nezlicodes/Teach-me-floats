@@ -1,0 +1,91 @@
+.container{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    height: 100vh;
+    background-image: linear-gradient(to bottom, #377be8, #5a98fc);
+    background-repeat: no-repeat;
+    display:grid;
+    padding-left: 2em;
+    padding-right: 1.5em;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat (auto-fill,1fr);
+    grid-template-areas: ". . t . . "
+                        " buttons buttons buttons . reset"
+                         "c c c text text"
+                         "c c c text  text"
+                         "c c c text  text"
+                         ". . f . .";
+    grid-gap: 15px;
+    
+}
+
+.content{
+   
+    grid-area: c;
+    border: 3px solid white;
+    background-color: antiquewhite; 
+    
+}
+
+.buttons:not(.reset){
+    grid-area: buttons;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.t {
+    grid-area: t;
+}
+
+.box{
+    background-color: gray;
+    height: 10rem;
+    width: 10rem;
+    float:none;
+    overflow: hidden;
+}
+.newBox{
+    background: navajowhite;
+    height: 5em;
+    width:5em;
+    overflow: hidden;
+}
+
+
+
+.text{
+    grid-area: text;
+    border: 2px solid sienna;
+    background-color: sandybrown;
+    height:15rem;
+    width: 15rem;
+    justify-self: center;
+    align-self: center;
+}
+
+button:not(.reset){
+    font-size: 1.25em;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    background-color: whitesmoke;
+}
+.reset{ 
+    grid-area: reset; 
+    font-size: 1.25em;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    background-color: coral;
+}
+
+
+
+.f{
+    grid-area:f;
+    font-size: 2em;
+    color: black;
+}
+
+p{
+    padding: 5px 5px 5px 5px;
+}

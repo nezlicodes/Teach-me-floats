@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Child play</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <div class = "t">
+            <h1>CSS Floats</h1>
+        </div>
+        <div class="buttons">
+            <button type="button" value="text" class="none" autofocus >none</button>
+            <button type="button" value="text" class="left">left</button>
+            <button type="button" value="text" class= "right">right</button>
+            <button type="button" value="text" class="inherit">inherit</button>
+            <button type="button" value="text" class="reset">reset</button>
+        </div>
+        <div class = "content">
+            <div class ="box">
+                <div class="newBox"></div>
+            </div>
+                
+                <p>Là, tout n'est qu'ordre et beauté. luxe calme et volupté. Là, tout n'est qu'ordre et beauté. luxe calme et volupté.Là, tout n'est qu'ordre et beauté. luxe calme et volupté.Là, tout n'est qu'ordre et beauté. luxe calme et volupté.Là, tout n'est qu'ordre et beauté. luxe calme et volupté.Là, tout n'est qu'ordre et beauté. luxe calme et volupté.Là, tout n'est qu'ordre et beauté. luxe calme et volupté.</p> 
+        </div>
+        <div class="text">
+            <p class="p">Let's start this!</p>
+        </div>
+
+        <div class="f">
+            <p>Made by @nezlicodes</p>
+        </div>
+
+    </div>
+
+    <script>
+        let left = document.querySelector('.left');
+        let right = document.querySelector('.right');
+        let inherit = document.querySelector('.inherit');
+        let none = document.querySelector('.none')
+        let box = document.querySelector('.box');
+        let newBox = document.querySelector('.newBox');
+        let text = document.querySelector('.text');
+        var buttons = document.querySelector('.buttons');
+        var reset = document.querySelector(".reset")
+           
+    
+        let checkChild = (str) => {
+                let p = document.querySelector('.p');
+                text.removeChild(p);
+                let newP = document.createElement('p');
+                newP.className= "p";
+                newP.textContent = str;
+                text.appendChild(newP);
+        } 
+
+        left.addEventListener("click", ()=> {
+            box.setAttribute("style", "backgroundColor: gray; height: 10rem; width: 10rem; float:left;");
+            checkChild('the element floats left inside the container.');
+        })
+        right.addEventListener("click", ()=> {
+            box.setAttribute("style", "backgroundColor: gray; height: 10rem; width: 10rem; float:right;");
+            checkChild('the element floats right inside the container.');
+        })
+        inherit.addEventListener("click", ()=> {
+            newBox.setAttribute("style", "backgroundColor: navajowhite; height: 5rem; width:5rem; float:inherit;");
+            checkChild("Watch now how the beige box inherits its float from the grey one by clicking on left and right. ");
+
+            
+        })
+        none.addEventListener("click", ()=> {
+            box.setAttribute("style", "backgroundColor: gray; height: 10rem; width: 10rem; float:none;");
+            checkChild('None is the default value. The element does not float.');
+        })
+
+        reset.addEventListener("click", ()=> {
+            newBox.setAttribute("style", "backgroundColor: navajowhite; height: 5em; width:5em; float:none;");
+            checkChild("By clicking on this button, you've set the property of the beige box to 'none' ");
+        })
+    
+    </script>
+</body>
+</html>
