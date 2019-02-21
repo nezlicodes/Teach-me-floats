@@ -1,14 +1,12 @@
 .container{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
-    height: 100vh;
     background-image: linear-gradient(to bottom, #377be8, #5a98fc);
     background-repeat: no-repeat;
     display:grid;
     padding-left: 2em;
     padding-right: 1.5em;
     grid-template-columns: repeat(5,1fr);
-    grid-template-rows: repeat (auto-fill,1fr);
+
     grid-template-areas: ". . t . . "
                         " buttons buttons buttons . reset"
                          "c c c text text"
@@ -20,10 +18,11 @@
 }
 
 .content{
-   
     grid-area: c;
     border: 3px solid white;
     background-color: antiquewhite; 
+    height: 25em;
+    width: 25em;
     
 }
 
@@ -58,8 +57,8 @@
     grid-area: text;
     border: 2px solid sienna;
     background-color: sandybrown;
-    height:15rem;
-    width: 15rem;
+    height:10rem;
+    width: 10rem;
     justify-self: center;
     align-self: center;
 }
@@ -87,5 +86,5 @@ button:not(.reset){
 }
 
 p{
-    padding: 5px 5px 5px 5px;
+    padding: 0.5em 0.5em 0.5em 0.5em;
 }
