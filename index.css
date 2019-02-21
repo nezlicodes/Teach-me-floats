@@ -5,36 +5,59 @@
     display:grid;
     padding-left: 2em;
     padding-right: 1.5em;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(autofill,minmax(250px, 1fr));
 
-    grid-template-areas: ". . t . . "
-                        " buttons buttons buttons . reset"
-                         "c c c text text"
-                         "c c c text  text"
-                         "c c c text  text"
-                         ". . f . .";
-    grid-gap: 15px;
+    grid-template-areas: "t  t  "
+                        " buttons reset"
+                         "c text"
+                         "c text"
+                         "c text"
+                         ". f ";
+   grid-row-gap:2em;
     
+}
+
+
+@media screen and (max-width:750px){
+    .container{
+        grid-template-areas: "t t" "buttons buttons" "text text" "c c" "f f";
+    }
+
+    .boxy{
+        height:3rem; width: 3rem;
+    }
+
+    .content{
+        grid-area: c;
+        border: 3px solid white;
+        background-color: antiquewhite; 
+        height: 25rem;
+        width: 20rem;
+        
+    }
 }
 
 .content{
     grid-area: c;
     border: 3px solid white;
     background-color: antiquewhite; 
-    height: 25em;
-    width: 25em;
+    height: 23em;
+    width: 32em;
     
 }
 
-.buttons:not(.reset){
+.buttons{
     grid-area: buttons;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
 .t {
     grid-area: t;
+    display: flex;
+    justify-content:center;
+    align-content:center;
 }
 
 .box{
@@ -55,10 +78,13 @@
 
 .text{
     grid-area: text;
+    
+}
+.boxy{
     border: 2px solid sienna;
     background-color: sandybrown;
-    height:10rem;
-    width: 10rem;
+    height:15rem;
+    width: 20rem;
     justify-self: center;
     align-self: center;
 }
@@ -68,15 +94,14 @@ button:not(.reset){
     padding: 0.75rem 1.25rem;
     border-radius: 0.5rem;
     background-color: whitesmoke;
+
 }
 .reset{ 
-    grid-area: reset; 
     font-size: 1.25em;
     padding: 0.75rem 1.25rem;
     border-radius: 0.5rem;
     background-color: coral;
 }
-
 
 
 .f{
